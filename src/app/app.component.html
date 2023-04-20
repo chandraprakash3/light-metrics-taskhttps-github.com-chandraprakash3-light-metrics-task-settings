@@ -1,0 +1,114 @@
+<header class="fixed-header">
+  <div class="container">
+    <div>
+      <img src="../assets/logo.png" alt="">
+    </div>
+    <div class="para">
+      Best list of all countries with
+      their flags <br>on the whole internet!!!
+    </div>
+  </div>
+</header>
+
+
+
+  <div  class="container" style="margin-top:100px;">
+    <div class="fixed-search">
+  
+      <div class="input-group mx-4" style="text-align:center;padding:20px;margin-right: 10px;">
+        <div class="Icon-inside">
+        <input class="input-control" style="padding: 12px;" type="text" [(ngModel)]="searchInput" (keyup)="filterCountries(searchInput)">
+        <i *ngIf="searchInput?.length>0" class="fa fa-close icon" (click)="clearAll()"></i>
+    </div>
+        <button class="btn btn-primary search-btn" style="margin-top: 0;" (click)="filterCountries(searchInput)">SEARCH</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<section class="scrollable">
+  <div style="margin-top:100px;">
+    <div>
+      <div class="d-flex" style="margin-top:150px;">
+        <div class="main-1" *ngFor="let list of filteredCountries | filter:searchInput">
+          <div><img class="country-image" data-toggle="modal" data-target="#exampleModalCenter"
+              (click)="openDialog(list)" src="{{list.flags.png}}" alt=""></div>
+          <p class="name" title="{{list.name.common}}">{{list.name.common}}</p>
+          <p class="continents">{{list.continents}}</p>
+        </div>
+      </div>
+
+    </div>
+    <div *ngIf="Countries.length>0 && filteredCountries.length==0">
+      Country not Found
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p><b>{{dataView?.name?.common}}</b>
+        </p>
+        <button style="position: relative;top:-37px;" type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <img src="{{dataView?.flags?.png}}" alt="">
+        <div class="pop">
+          <p ><b>Capital  </b> <span style="padding-left: 70px;">{{dataView?.capital}}</span></p>
+          <p><b>Continent  </b><span style="padding-left: 50px;"> {{dataView?.continents}}</span></p>
+          <p ><b>Currency  </b> <span style="padding-left: 54px;">{{dataView?.currencies}}</span>
+            </p>
+          <p><b>Languages  </b><span style="padding-left: 45px;"> {{dataView?.languages}}</span></p>
+          <p><b>Population </b><span style="padding-left: 45px;"> {{dataView?.population}}</span></p>
+          <p><b>TimeZone  </b> <span style="padding-left: 50px;">{{dataView?.timezones}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="d-flex flex-row justify-content-center">
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item">
+      <a class="page-link " (click)="prev()">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" (click)="perPage(1)">1</a></li>
+    <li class="page-item"><a class="page-link" (click)="perPage(2)">2</a></li>
+    <li class="page-item"><a class="page-link" (click)="perPage(3)">3</a></li>
+    <li class="page-item">
+      <a class="page-link " (click)="next()">Next</a>
+    </li>
+  </ul>
+</nav>
+</div> 
+
+
+
+
+
+
+<footer class="fixed-footer">
+  <div class="container d-flex">
+    <div>
+      <img src="../assets/logo.png" alt="">
+      <p class="para1">Worldpedia Inc</p>
+    </div>
+    <div>
+      <input style="width:250px;padding: 5px;" type="email" placeholder="Enter Email">
+      <div class="d-flex">
+        <button class="subscribe">subscribe</button>
+      </div>
+      <p class="para1-0">2023|All Rights Reserved</p>
+    </div>
+
+  </div>
+</footer>

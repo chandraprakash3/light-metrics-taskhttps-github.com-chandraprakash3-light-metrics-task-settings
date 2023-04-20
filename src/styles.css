@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+@media screen and (min-width:1200px) {
+    .scrollable {
+        margin: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:1024px) {
+    .input-control {
+        width: 330px !important;
+        border: 1px solid black !important;
+    }
+
+    .fixed-search {
+        left: 80px !important;
+    }
+
+    .scrollable {
+        width: 90% !important;
+        margin: 120px 86px !important;
+        margin-top: -90px !important;
+    }
+
+    .para1 {
+        margin: 110px 0px !important;
+    }
+
+    .fixed-footer {
+        height: 325px !important;
+    }
+
+}
+
+
+
+@media screen and (max-width:950px) {
+    .container{
+        width: 90% !important;
+        padding-right: 15px !important;
+        padding-left: 0 !important;
+        margin:0 !important;
+    }
+    .input-control {
+        width: 250px !important;
+        border: 1px solid black !important;
+    }
+
+    .fixed-search {
+        left: 40px !important;
+    }
+
+    .scrollable {
+        width: 90% !important;
+        margin: 125px 70px !important;
+        margin-top: 30px !important;
+    }
+
+    .para1 {
+        margin: 53px 0px !important;
+    }
+
+    .fixed-footer {
+        height: 410px !important;
+        padding:30px !important;
+    }
+    .para1-0 {
+        margin: 14px !important;
+        text-align: end !important ;
+    }
+    .search-btn{
+        margin-top: 10px !important;
+        margin-left: 50px !important;
+    }
+    .modal-open{
+        padding-left: 5px !important;
+        padding-right: 56px !important;
+        display: block !important;
+    }
+
+}
